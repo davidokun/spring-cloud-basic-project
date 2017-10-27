@@ -1,6 +1,7 @@
 package com.singletonapps.game.controller;
 
 import com.singletonapps.game.model.Game;
+import com.singletonapps.game.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,22 +12,22 @@ import java.util.List;
 @RequestMapping("v1")
 public class GameController {
 
+
     @Autowired
-    private Game game;
+    private GameService gameService;
+
 
     @GetMapping("game")
     public List<Game> getAllGames(){
 
-        return null;
+        return gameService.getGames();
     }
+
 
     @GetMapping("game/{id}")
     public Game getGame(@PathVariable int id){
-        game.setId(id);
-        return game;
+
+        return gameService.getGame(id);
     }
-
-
-
 
 }
