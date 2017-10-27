@@ -1,12 +1,18 @@
 package com.singletonapps.publisher.model;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class Publisher {
 
     private long id;
     private String name;
+
+    public Publisher() {
+    }
+
+    public Publisher(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public long getId() {
         return id;

@@ -1,10 +1,7 @@
 package com.singletonapps.game.model;
 
-import org.springframework.stereotype.Component;
 
-
-@Component
-public class Game {
+public class    Game {
 
     private int id;
     private String name;
