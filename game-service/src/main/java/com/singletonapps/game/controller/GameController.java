@@ -27,7 +27,8 @@ public class GameController {
     @GetMapping("game/{id}")
     public Game getGame(@PathVariable int id){
 
-        return gameService.getGame(id);
+        return gameService.getGame(id)
+                .orElse(new Game());
     }
 
 }

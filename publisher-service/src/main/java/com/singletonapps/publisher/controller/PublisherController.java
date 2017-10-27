@@ -27,6 +27,7 @@ public class PublisherController {
     @GetMapping("/{id}")
     public Publisher getPublisherById(@PathVariable int id){
 
-        return publisherService.getPublisher(id);
+        return publisherService.getPublisher(id)
+                .orElse(new Publisher());
     }
 }

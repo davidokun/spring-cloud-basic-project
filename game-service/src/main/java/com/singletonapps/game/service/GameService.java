@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GameService {
@@ -26,8 +27,11 @@ public class GameService {
         return gameList;
     }
 
-    public Game getGame(int id){
+    public Optional<Game> getGame(int id){
 
-        return gameList.get(id);
+        return gameList
+                .stream()
+                .filter(g -> g.getId() == id)
+                .findFirst();
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PublisherService {
@@ -31,9 +32,12 @@ public class PublisherService {
     }
 
 
-    public Publisher getPublisher(int id){
+    public Optional<Publisher> getPublisher(int id){
 
-        return publisherList.get(id);
+        return publisherList
+                .stream()
+                .filter(publisher -> publisher.getId() == id)
+                .findFirst();
     }
 
 }
