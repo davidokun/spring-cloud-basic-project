@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("v1")
+@RequestMapping("api/v1/games")
 public class GameController {
 
 
@@ -17,14 +17,14 @@ public class GameController {
     private GameService gameService;
 
 
-    @GetMapping("game")
+    @GetMapping()
     public List<Game> getAllGames(){
 
         return gameService.getGames();
     }
 
 
-    @GetMapping("game/{id}")
+    @GetMapping("{id}")
     public Game getGame(@PathVariable int id){
 
         return gameService.getGame(id)

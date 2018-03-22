@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("v1/publisher")
+@RequestMapping("api/v1/publishers")
 public class PublisherController {
 
     @Autowired
