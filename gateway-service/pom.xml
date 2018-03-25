@@ -72,6 +72,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${basedir}/docker</outputDirectory>
+					<finalName>gateway-server</finalName>
+				</configuration>
 			</plugin>
 
 			<plugin>
