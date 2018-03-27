@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+
+  config-server:
+    image: config-server
+    ports: 
+      - 9001:9001
+
+  registry-server:
+    image: registry-server
+    ports: 
+      - 9002:9002
+    links:
+      - config-server
+
+  gateway-server:
+    image: gateway-server
+    ports:
+      - 8080:8080
+    depends_on:
+      - config-server
+      - registry-server
+
+  game-service:
+    image: game-service
+    ports:
+      - 9003:9003
+    links:
+      - config-server
+      - registry-server
+    depends_on:
+      - config-server
+      - registry-server
+      - gateway-server
+
+  publisher-service:
+    image: publisher-service
+    ports:
+      - 9004:9004
+    links:
+      - config-server
+      - registry-server
+    depends_on:
+      - config-server
+      - registry-server
+      - gateway-server
