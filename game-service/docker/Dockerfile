@@ -8,6 +8,6 @@ ADD game-service.jar /usr/local/game-service/game-service.jar
 
 WORKDIR /usr/local/game-service
 
-EXPOSE 6000
+EXPOSE 9003
 
 ENTRYPOINT ["java", "-jar", "game-service.jar", "--acceptLicense", "/usr/local/game-service"]
