@@ -14,7 +14,7 @@ cd ../../gateway-service/docker && docker build -t gateway-server . &&
 echo -------------------------------- &&
 echo -- Building Publisher-Service -- &&
 echo -------------------------------- &&
-cd ../../publisher-service/docker && docker build -t publishe-service . &&
+cd ../../publisher-service/docker && docker build -t publisher-service . &&
 echo ------------------------------ &&
 echo -- Building Registry-Server -- &&
 echo ------------------------------ &&
